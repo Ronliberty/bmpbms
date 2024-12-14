@@ -1,0 +1,17 @@
+{% extends 'dashboard/layout.html' %}
+{%  block content%}
+    <h1>Tools</h1>
+    <ul>
+        {% for tool in tools %}
+            <li>{{ tool.name }}</li>
+        <p>{{ tool.description }}</p>
+
+        <div><a href="{% url 'freelance:tool_detail' pk=tool.id %}">click here</a></div>
+
+  {% empty %}
+    <p>No news available.</p>
+
+        {% endfor %}
+    </ul>
+
+{% endblock %}

@@ -1,0 +1,33 @@
+{% extends 'dashboard/layout.html' %}
+{%  block content%}
+    <h1>Invoices Created by {{ request.user.username }}</h1>
+
+    <table border="1">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Amount to Pay</th>
+                <th>Description</th>
+                <th>Wallet/Account</th>
+                <th>Recipient</th>
+                <th>Created At</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for invoice in invoices %}
+                <tr>
+                    <td>{{ invoice.id }}</td>
+                    <td>{{ invoice.amount_to_pay }}</td>
+                    <td>{{ invoice.description }}</td>
+                    <td>{{ invoice.wallet_email_or_account }}</td>
+                    <td>{{ invoice.recipient_user.username }}</td>
+                    <td>{{ invoice.created_at }}</td>
+                </tr>
+            {% empty %}
+                <tr>
+                    <td colspan="6">No invoices found.</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

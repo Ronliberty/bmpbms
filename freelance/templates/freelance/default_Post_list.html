@@ -1,0 +1,21 @@
+{% load static %}
+<link rel="stylesheet" href="{% static 'freelance/css/style.css' %}">
+
+
+<div class="bms-post">
+    <h1 class="bms-title">BMS_Posts</h1>
+    <h2 class="bms-get">Get the latest Updates from our trusted sources and professional informants!</h2>
+{% for post in post %}
+    <p class="post-title">{{ post.title }}</p>
+    <p class="post-descr"> {{ post.description }}</p>
+
+    <h1 class="post-sub">Check Out This </h1>
+    <div>
+    <button class="btn-click" onclick="window.open('{{ post.link }}');">Click Here!</button>
+    </div>
+  </div>
+    <iframe width="80%" height="600" src="{{ post.link }}" style="margin-bottom: 1rem; border-radius: 5px;" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </div>
+{% empty %}
+    <p>No posts available.</p>
+  {% endfor %}

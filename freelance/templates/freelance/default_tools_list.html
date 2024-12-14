@@ -1,0 +1,17 @@
+  {% load static %}
+
+<link rel="stylesheet" href="{% static 'freelance/css/style.css' %}">
+
+</div>
+
+  <div class="imp-assets">
+    <h1>Important assets</h1>
+    <h2>Below are the latest ai tools and other freelance tools that you need to know about!</h2>
+    {% for tool in tools %}
+    <p class="imp-name">{{ tool.name }}</p>
+    <p class="imp-descr">{{ tool.description }}</p>
+    <li class="imp-btn" onclick="window.open('{{ tool.link }}');">Click Here</li>
+     {% empty %}
+    <p>No tools available.</p>
+  {% endfor %}
+  </div>

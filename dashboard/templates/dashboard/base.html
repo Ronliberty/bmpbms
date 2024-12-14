@@ -1,0 +1,105 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'dashboard/css/try.css' %}" />
+    <link rel="stylesheet" href="{% static 'dashboard/css/mobile.css' %}" media="only screen and (max-width: 768px)">
+
+
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+      {% block extra_css %}{% endblock %}
+</head>
+<body>
+   <header class="header">
+    <div class="left-section">
+        <div class="hamburger-menu">
+            <i class='bx bx-menu'></i>
+        </div>
+        <a href="{% url 'dashboard:client_dashboard' %}" style="text-decoration: none;">
+        <h1 class="logo-name">Bms_Bmp</h1>
+        </a>
+    </div>
+<!--    <div class="middle-section">-->
+<!--    &lt;!&ndash; Search Form &ndash;&gt;-->
+<!--    <form action="{% url 'account:search' %}" method="post">-->
+<!--        {% csrf_token %}-->
+<!--        <input class="search-bar" type="search" placeholder="Search Venues" name="Searched" >-->
+<!--        <button type="submit" class="search-icon">-->
+<!--            <i class='bx bx-search'></i>-->
+<!--        </button>-->
+<!--    </form>-->
+<!--</div>-->
+
+            <div class="right-section">
+            <div class="icon-settings">
+
+                    <a href="{% url 'account:display' %}" class="user" style="text-decoration: none;"><i class='bx bx-user' ></i></a>
+
+                    <a href="index.html" class="chart" style="text-decoration: none;"><i class='bx bxs-comment-dots'></i></a>
+
+                    <a href="" class="darkicon-bx" onclick="myFunction()"><i class='bx bxs-moon' id="settings-icon"></i></i></a>
+
+                    <a href="{% url 'account:account' %}" class="settings" style="text-decoration: none;"><i class='bx bx-cog'></i></a>
+            </div>
+
+<!--                <div class="profile-picture">-->
+<!--                    <img class="profile-pic current-user-picture" src="{{ UserProfile.profile_picture }}">-->
+<!--                </div>-->
+    </div>
+    <nav class="sidebar">
+        <div class="sidebar-link">
+            <a href="{% url 'dashboard:client_dashboard' %}" class="home-link" style="text-decoration: none; color: black;"><i class='bx bx-home' ></i></a>
+            <div> <a href="{% url 'dashboard:client_dashboard' %}" class="home-link" style="text-decoration: none; color: black;">Home</a></div>
+        </div>
+        <div class="sidebar-link">
+            <a href="{% url 'agent:agent-list' %}" class="home-link" style="text-decoration: none; color: black;"><i class='bx bxs-user' ></i></a>
+            <div> <a href="{% url 'agent:agent-list' %}" class="home-link" style="text-decoration: none; color: black;">Agents</a></div>
+        </div>
+        <div class="sidebar-link">
+            <a href="{% url 'partner:default_partnership_list' %}" class="home-link" style="text-decoration: none; color: black;"><i class='bx bx-male-female'></i></a>
+            <div> <a href="{% url 'partner:default_partnership_list' %}" class="home-link" style="text-decoration: none; color: black;">Partnerships</a></div>
+        </div>
+        <div class="sidebar-link">
+            <a href="{% url 'services:history-service' %}" class="home-link" style="text-decoration: none; color: black;"><i class='bx bx-history'></i></a>
+            <div> <a href="{% url 'services:history-service' %}" class="home-link" style="text-decoration: none; color: black;"></a>History</a></div>
+        </div>
+        <div class="sidebar-link">
+            <a href="{% url 'account:help' %}" class="home-link" style="text-decoration: none; color: black;"><i class='bx bx-help-circle'></i></a>
+            <div> <a href="{% url 'account:help' %}" class="home-link" style="text-decoration: none; color: black;">Help</a></div>
+        </div>
+
+    </nav>
+
+
+
+
+   </header>
+   <main>
+       <section>
+           {% block content %}
+           {% endblock %}
+       </section>
+   </main>
+   <footer class="footerbar">
+    <div >
+        <a href="{% url 'dashboard:client_dashboard' %}" class="footlink" style="text-decoration: none;"><i class='bx bx-home' ></i></a>
+
+            <a href="{% url 'agent:agent-list' %}" class="footlink" style="text-decoration: none;"><i class='bx bxs-user' ></i></a>
+
+            <a href="{% url 'partner:default_partnership_list' %}" class="footlink" style="text-decoration: none;"><i class='bx bx-male-female'></i></a>
+
+            <a href="{% url 'services:history-service' %}" class="footlink" style="text-decoration: none;"><i class='bx bx-history'></i></a>
+
+
+
+
+    </div>
+   </footer>
+
+   <script src="{% static 'dashboard/dash.js' %}"></script>
+
+</body>
+</html>

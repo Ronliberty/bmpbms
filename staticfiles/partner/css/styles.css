@@ -1,0 +1,42 @@
+
+.part {
+  background-color: #f9f9f9;
+  overflow: hidden;
+  padding: 4rem;
+}
+
+.part-name {
+  font-size: 1.5rem;
+  border-top: 1px dotted black;
+  padding-top: 1rem;
+}
+
+.part-name span {
+  font-weight: bold;
+}
+
+.part-descr {
+  font-size: 1.2rem;
+}
+
+.part-descr span {
+  font-weight: bold;
+}
+
+.part-p {
+  font-size: 1.2rem;
+}
+
+.part-btn {
+  background-color: dodgerblue;
+  color: white;
+  padding: 0.5rem 0.5rem;
+  border: 1px;
+  border-radius: 1rem;
+  font-size: 1rem;
+}
+
+.part-btn:hover {
+  color: white;
+  background-color: blue;
+}

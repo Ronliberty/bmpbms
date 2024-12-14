@@ -1,0 +1,10 @@
+{% extends 'dashboard/layout.html' %}
+{%  block content%}
+<h2>Delete Analytics</h2>
+<p>Are you sure you want to delete "{{ object.description }}"?</p>
+<form method="post">
+    {% csrf_token %}
+    <button type="submit">Confirm</button>
+    <a href="{% url 'payment:manager_analytics_list' %}">Cancel</a>
+</form>
+{% endblock %}

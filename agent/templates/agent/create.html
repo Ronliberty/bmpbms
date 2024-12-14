@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agent Form</title>
+</head>
+<body>
+    <h1>Agent Form</h1>
+    <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+
+        <!-- Agent Form Fields -->
+        <div>
+            <label for="id_names">Full Name:</label>
+            {{ form.names }}
+        </div>
+        <div>
+            <label for="id_portfolio">Portfolio:</label>
+            {{ form.portfolio }}
+        </div>
+        <div>
+            <label for="id_email">Email:</label>
+            {{ form.email }}
+        </div>
+        <div>
+            <label for="id_social_links">Social Links:</label>
+            {{ form.social_links }}
+        </div>
+        <div>
+            <label for="id_phone_number">Phone Number:</label>
+            {{ form.phone_number }}
+        </div>
+
+        <!-- Agent Image Form -->
+        <h2>Agent Image</h2>
+        <div>
+            <label for="id_image">Upload Image:</label>
+            {{ image_form.image }}
+        </div>
+
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>

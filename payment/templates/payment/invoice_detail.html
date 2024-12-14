@@ -1,0 +1,25 @@
+{% extends 'dashboard/layout.html' %}
+{%  block content%}
+<h1>Invoice Details</h1>
+
+<table>
+    <tr>
+        <th>Invoice Number</th>
+        <td>{{ invoice.invoice_number }}</td>
+    </tr>
+    <tr>
+        <th>Description</th>
+        <td>{{ invoice.description }}</td>
+    </tr>
+    <tr>
+        <th>Amount</th>
+        <td>${{ invoice.amount_to_pay }}</td> <!-- Updated to use the correct field -->
+    </tr>
+    <tr>
+        <th>Created At</th>
+        <td>{{ invoice.created_at }}</td>
+    </tr>
+</table>
+<a href="{% url 'payment:invoice-delete' pk=invoice.pk %}" onclick="return confirm('Are you sure you want to delete this invoice?');">Delete Invoice</a>
+
+{% endblock %}

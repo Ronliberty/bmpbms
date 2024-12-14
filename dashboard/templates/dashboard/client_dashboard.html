@@ -1,0 +1,55 @@
+{% extends 'dashboard/base.html' %}
+{%  block content%}
+
+<div class="main-header">
+          <nav class="main-links">
+              <li class="link"><a href="{% url 'payment:default_analytics_list' %}" style="text-decoration: none; color: #000; ">Analytics</a></li>
+              <li class="link"><a href="{% url 'payment:default_invoice_list' %}"style="text-decoration: none;">Invoice</a></li>
+              <li class="link"><a href="{% url 'freelance:default_news_list' %}"style="text-decoration: none;">News</a></li>
+              <li class="link"><a href="{% url 'services:request-service' %}"style="text-decoration: none;">Request Service</a></li>
+              <li class="link"><a href="{% url 'services:default-list' %}"style="text-decoration: none;">Service</a></li>
+              <li class="link"><a href="{% url 'freelance:default_skills_list' %}"style="text-decoration: none;">Skills</a></li>
+              <li class="link"><a href="{% url 'freelance:default_post_list' %}"style="text-decoration: none;">Posts</a></li>
+              <li class="link"><a href="{% url 'freelance:default_tools_list' %}"style="text-decoration: none;">Tools</a></li>
+</nav>
+
+        </div>
+<div id="child-content">
+    <!-- Dynamic content will be loaded here -->
+<!--    <p>Welcome! Select an option from the navigation above.</p>-->
+</div>
+
+{% block extra_js %}
+<script>
+    // Select all navigation links
+    const navLinks = document.querySelectorAll(".main-links .link a");
+
+    // Get the dynamic content container
+    const contentContainer = document.getElementById("child-content");
+
+    // Add event listeners to each link
+    navLinks.forEach(link => {
+        link.addEventListener("click", function (event) {
+            event.preventDefault(); // Prevent default link behavior
+
+            const targetUrl = this.getAttribute("href"); // Get the URL from the link
+
+            // Only proceed if the URL is valid
+            if (targetUrl && targetUrl !== "#") {
+                fetch(targetUrl)
+                    .then(response => {
+                        if (!response.ok) {
+                            throw new Error(`HTTP error! status: ${response.status}`);
+                        }
+                        return response.text(); // Parse the response as text (HTML)
+                    })
+                    .then(html => {
+                        contentContainer.innerHTML = html; // Inject the loaded content
+                    })
+                    .catch(error => console.error("Error loading content:", error));
+            }
+        });
+    });
+</script>
+{% endblock %}
+{% endblock %}

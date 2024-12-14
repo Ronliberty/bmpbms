@@ -1,0 +1,20 @@
+{% extends 'dashboard/base.html' %}
+{% load static %}
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'agent/css/style.css' %}">
+{% endblock %}
+
+{% block content %}
+
+
+<div class="our-agents">
+    <h1>Our Agents and Researchers</h1>
+    <p class="agents-descr">These are our trusted agents. Reach out today for more information or assistance.</p>
+
+    <div class="agent-details">
+        <p class="agents-name"><span>Name:</span> {{ agent.names }}</p>
+        <p class="agents-portfolio"><span>Portfolio:</span> <a href="{{ agent.portfolio }}" target="_blank">{{ agent.portfolio }}</a></p>
+        <li class="agents-link"> Reach out</li>
+    </div>
+</div>
+{% endblock %}

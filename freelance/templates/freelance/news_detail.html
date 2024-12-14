@@ -1,0 +1,10 @@
+{% extends 'dashboard/layout.html' %}
+{%  block content%}
+
+    <h1>{{ news_item.title }}</h1>
+    <p>{{ news_item.content }}</p>
+    <a href="{% url 'freelance:manager_news_list' %}">Back to News</a>
+
+        <a href="{% url 'freelance:news_delete' news_item.id %}">Delete News</a>
+
+{% endblock %}

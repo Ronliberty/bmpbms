@@ -1,0 +1,71 @@
+.our-agents {
+  background-color: #f9f9f9;
+  padding: 4rem;
+  overflow: hidden;
+}
+
+.our-agents h1 {
+  padding-bottom: 2rem;
+}
+
+.agents-descr {
+  font-size: 1.5rem;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.agents-name {
+  font-size: 1.5rem;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  padding-top: 2rem;
+  border-top: 1px dotted black;
+}
+
+.agents-name span {
+  font-weight: bold;
+}
+
+.agents-portfolio {
+  font-size: 1.5rem;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.agents-portfolio span {
+  font-weight: bold;
+}
+
+.agents-link {
+  position: relative;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  background: white;
+  border: 2px solid;
+  padding: 0.5rem;
+  font-size: 1.5rem;
+  color: #000;
+  text-decoration: none;
+  z-index: 1;
+  overflow: hidden;
+  transition: .5s;
+  border-bottom: 2px solid black;
+}
+
+.agents-link:hover {
+  color: white;
+}
+
+.agents-link::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  background: black;
+  z-index: -1;
+  transition: .5s;
+}
+
+.agents-link:hover::before {
+  width: 100%;
+}

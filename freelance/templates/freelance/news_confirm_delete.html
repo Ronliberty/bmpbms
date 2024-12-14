@@ -1,0 +1,9 @@
+{% extends 'dashboard/layout.html' %}
+{%  block content%}
+<h2>Are you sure you want to delete "{{ news_item.title }}"?</h2>
+<form method="post">
+  {% csrf_token %}
+  <button type="submit">Confirm</button>
+</form>
+<a href="{% url 'freelance:manager_news_list' %}">Cancel</a>
+{% endblock %}

@@ -1,0 +1,33 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Success</title>
+        <link rel="stylesheet" href="{% static 'dashboard/css/try.css' %}" />
+    <link rel="stylesheet" href="{% static 'dashboard/css/mobile.css' %}" media="only screen and (max-width: 768px)">
+     <div id="popup-card" class="popup">
+        <div class="popup-content">
+            <h2>Success</h2>
+            <p>{{ message }}</p>
+            <button id="close-popup">Close</button>
+        </div>
+    </div>
+</head>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const popup = document.getElementById('popup-card');
+            const closeBtn = document.getElementById('close-popup');
+
+            // Display the popup
+            popup.style.display = 'block';
+
+            // Close the popup when the button is clicked
+          closeBtn.addEventListener('click', () => {
+                window.history.back(); // Go back to the previous page
+            });
+        });
+    </script>
+</body>
+</html>

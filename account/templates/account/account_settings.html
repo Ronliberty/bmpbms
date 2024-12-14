@@ -1,0 +1,37 @@
+{% extends 'account/main.html' %}
+{% load static %}
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'account/css/try.css' %}">
+{% endblock %}
+{%  block content%}
+<section class="sett-main">
+ <div class="mainset-cont">
+            <form class="mainset-form" method="post">
+                 {% csrf_token %}
+
+                <div class="mainset-bio">
+                <label for="bio" class="bio-label">Bio :</label> <br>
+                <input type="text" id="bio" placeholder="Enter Your Bio." textarea name="message" class="bio-input">
+                </div>
+
+                <div class="mainset-phone">
+                <label for="phone" class="phone-label">Phone :</label>
+                <input type="tel" id="phone" name="phone" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}" class="phone-input">
+                </div>
+
+                <div class="mainset-pic">
+                <label for="myfile" class="pic-label">Select profile picture </label>
+                <input type="file" id="myfile" name="myfile" class="pic-input">
+                    <button type="submit">Update</button>
+                </div>
+            </form>
+           </div>
+{% if messages %}
+    <div>
+        {% for message in messages %}
+            <div class="alert {{ message.tags }}">{{ message }}</div>
+        {% endfor %}
+    </div>
+{% endif %}
+    </section>
+{% endblock %}

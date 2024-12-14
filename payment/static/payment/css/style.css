@@ -1,0 +1,90 @@
+.data {
+  width: 80%;
+  margin: 20px auto;
+  font-family: 'Courier New', monospace;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.data .desc, .amt, .wallet, .created {
+  border-bottom: 1px dashed #ccc;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.data h1 {
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
+}
+
+.data p {
+  font-size: 16px;
+  text-align: right;
+  color: #555;
+}
+
+.amt p {
+  font-size: 20px;
+  font-weight: bold;
+  color: #007b5e;
+}
+
+.wallet p, .created p {
+  font-size: 1rem;
+  font-weight: bold;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  color: #000000;
+}
+
+.wallet::before, .created::before {
+  content: '';
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  margin-right: 10px;
+  background-color: #007b5e;
+  border-radius: 50%;
+}
+
+.progress {
+  overflow: hidden;
+  padding: 2rem;
+  border-radius: 0.5rem;
+  margin-bottom: 2rem;
+  padding-left: 3.5rem;
+}
+
+.progress-img {
+  border-radius: 1rem;
+  object-fit: cover;
+  object-position: center;
+}
+
+.progress-descr {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.progress-amt {
+  font-size: 1.5rem;
+  font-weight: bold;
+  font-family: monospace;
+  color: black;
+}
+
+.progress-amt span {
+  color: black;
+}
+
+.progress-create {
+  color: black;
+  font-size: 1rem;
+  border-bottom: 1px solid black;
+  padding-bottom: 2rem;
+}
+
+.progress-create span {
+  color: black;
+}

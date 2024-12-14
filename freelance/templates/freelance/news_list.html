@@ -1,0 +1,15 @@
+{% extends 'dashboard/layout.html' %}
+{%  block content%}
+<h2>News</h2>
+<ul>
+  {% for news_item in news_item %}
+
+
+      <h1>{{ news_item.title }}</h1>
+      <p>{{ news_item.content }}</p>
+   <div><a href="{% url 'freelance:news_detail' news_item.id %}">click here</a></div>
+  {% empty %}
+    <p>No news available.</p>
+  {% endfor %}
+</ul>
+{% endblock %}

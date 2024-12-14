@@ -1,0 +1,33 @@
+{% extends 'dashboard/layout.html' %}
+{%  block content%}
+<h1>Analytics Data</h1>
+
+<table>
+    <thead>
+        <tr>
+            <th>Amount</th>
+            <th>Description</th>
+            <th>Image</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for analytic in object_list %}
+        <tr>
+            <td>{{ analytic.amount }}</td>
+            <td>{{ analytic.description }}</td>
+            <td>
+                {% if analytic.image %}
+                    <img src="{{ analytic.image.url }}" alt="Analytics Image" width="100">
+                {% else %}
+                    No image available
+                {% endif %}
+            </td>
+        </tr>
+        {% empty %}
+        <tr>
+            <td colspan="3">No analytics data available.</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

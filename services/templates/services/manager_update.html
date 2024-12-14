@@ -1,0 +1,13 @@
+
+
+
+  <h1>Update Service Request Status</h1>
+
+  <form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+
+    <button type="submit">Save Changes</button>
+  </form>
+
+  <a href="{% url 'services:manager-request' %}">Back to Requests List</a>

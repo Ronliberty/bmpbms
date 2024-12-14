@@ -1,0 +1,30 @@
+
+  <h1>{{ partnershiparea.name }}</h1>
+  {% if object_list %}
+    <table>
+      <thead>
+        <tr>
+          <th>Partnership Area</th>
+          <th>Question</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for PartnershipQuestion in object_list %}
+          <tr>
+            <td>{{ PartnershipQuestion.partnership_area.name }}</td>
+            <td>{{ PartnershipQuestion.question_text }}</td>
+            <td>
+              <!-- Edit Button -->
+              <a href="#">Skip</a> |
+              <!-- Delete Button -->
+              <a href="#">Answer</a>
+            </td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  {% else %}
+    <p>You have no Partnership.</p>
+  {% endif %}
+

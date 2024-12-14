@@ -1,0 +1,11 @@
+{% extends 'dashboard/layout.html' %}
+{%  block content%}
+<h2>Analytics Detail</h2>
+<p><strong>Description:</strong> {{ analytic.description }}</p>
+<p><strong>Amount:</strong> {{ analytic.amount }}</p>
+<p><strong>Created By:</strong> {{ analytic.created_by }}</p>
+<p><strong>Target User:</strong> {{ analytic.target_user }}</p>
+<p><strong>Image:</strong> <img src="{{ analytic.image.url }}" alt="{{ analytic.description }}"></p>
+<a href="{% url 'payment:manager_analytics_list' %}">Back to List</a>
+
+{% endblock %}

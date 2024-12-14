@@ -1,0 +1,24 @@
+<table>
+    <thead>
+        <tr>
+            <th>Service</th>
+            <th>Requested By</th>
+            <th>Requested At</th>
+            <th>Status</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for request in servicerequests %}
+        <tr>
+            <td>{{ request.service.title }}</td>
+            <td>{{ request.requested_by.username }}</td>
+            <td>{{ request.requested_at }}</td>
+            <td>{{ request.status }}</td>
+            <td>
+                <a href="{% url 'services:service-request-update' request.id %}">Update Status</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>

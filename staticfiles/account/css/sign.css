@@ -1,0 +1,143 @@
+/* General Reset */
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+
+  /* Main Container */
+  .container {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+    box-sizing: border-box;
+  }
+
+  /* Form Elements */
+  .signup-form .form-group {
+    margin-bottom: 20px;
+    text-align: left;
+  }
+
+  .signup-form label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 14px;
+    color: #333;
+  }
+
+  .signup-form input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+    box-sizing: border-box;
+  }
+
+  .signup-form input:focus {
+    border-color: #007bff;
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+  }
+
+  /* Button */
+  .btn {
+    width: 100%;
+    padding: 12px;
+    background-color: #007bff;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+
+  .btn:hover {
+    background-color: #0056b3;
+  }
+
+  /* Login Redirect */
+  .login-redirect {
+    margin-top: 15px;
+    font-size: 14px;
+    color: #555;
+  }
+
+  .login-redirect a {
+    color: #007bff;
+    text-decoration: none;
+  }
+
+  .login-redirect a:hover {
+    text-decoration: underline;
+  }
+
+  /* Alerts */
+  .alert {
+    background-color: #ffcccc;
+    color: #a33;
+    padding: 10px;
+    border: 1px solid #e0b4b4;
+    border-radius: 5px;
+    margin-top: 10px;
+    font-size: 13px;
+  }
+
+  /* Responsive Styles */
+
+  /* For tablets and smaller devices */
+  @media (max-width: 768px) {
+    .container {
+      padding: 20px;
+      max-width: 90%; /* Reduce max width for better fit */
+    }
+
+    .btn {
+      font-size: 14px;
+      padding: 10px; /* Slightly smaller button */
+    }
+
+    .signup-form label {
+      font-size: 13px;
+    }
+
+    .signup-form input {
+      font-size: 13px;
+      padding: 8px; /* Adjust input size */
+    }
+
+    .login-redirect {
+      font-size: 13px;
+    }
+  }
+
+  /* For small mobile devices */
+  @media (max-width: 480px) {
+    h2 {
+      font-size: 20px; /* Smaller heading for compact view */
+    }
+
+    .btn {
+      padding: 8px; /* Smaller padding */
+      font-size: 14px;
+    }
+
+    .signup-form input {
+      font-size: 12px; /* Compact input size */
+    }
+
+    .login-redirect {
+      font-size: 12px; /* Adjust font for login redirect */
+    }
+  }
+

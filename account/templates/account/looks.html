@@ -1,0 +1,72 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="{% static 'account/css/main.css' %}">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    {% block extra_css %}{% endblock %}
+</head>
+<body>
+   <header class="header">
+    <div class="left-section">
+        <a href="{% url 'dashboard:manager_dashboard' %}" class="logo-link">
+            <h1 class="logo-name" style="text-decoration: none;">Bms_Bmp</h1>
+        </a>
+    </div>
+        <div class="middle-section">
+        <input class="search-bar" type="text" placeholder="Search">
+        <div class="search-icon">
+            <i class='bx bx-search' ></i>
+        </div>
+        <div class="right-section">
+            <div class="icon-settings">
+                    <a href="" class="home-link"><i class='bx bx-cog'></i></a>
+
+                    <a href="{% url 'agent:user_list' %}" class="home-link"><i class='bx bx-user' ></i></a>
+
+                    <a href="index.html" class="home-link"><i class='bx bxs-comment-dots'></i></a>
+
+            </div>
+        </div>
+                <div class="profile-picture">
+                    <img class="current-user-picture" src= "/Powerhouse_gym/assets/gym1.jpg" alt="" class="profile-pic">
+                </div>
+
+        </div>
+
+    <nav class="sidebar">
+        <div class="sidebar-link">
+            <div> <a href="{% url 'account:manager-help' %}" class="home-link" style="text-decoration: none; color: black;">CreateHelp</a></div>
+        </div>
+        <div class="sidebar-link">
+            <div> <a href="{% url 'account:manager-policy' %}" class="home-link" style="text-decoration: none; color: black;">CreatePolicies</a></div>
+        </div>
+        <div class="sidebar-link">
+            <div> <a href="" class="home-link" style="text-decoration: none; color: black;">Notifications</a></div>
+        </div>
+        <div class="sidebar-link">
+            <div> <a href="" class="home-link" style="text-decoration: none; color: black;">Ideas</a></div>
+        </div>
+        <div class="sidebar-link">
+            <div> <a href="" class="home-link" style="text-decoration: none; color: black;">Planning</a></div>
+        </div>
+        <div class="sidebar-link">
+            <div> <a href="" class="home-link" style="text-decoration: none; color: black;">meetings</a></div>
+        </div>
+        <div class="sidebar-link">
+            <div> <a href="{% url 'logout' %}" class="home-link" style="text-decoration: none; color: black;">Logout</a></div>
+        </div>
+
+    </nav>
+   </header>
+   <main>
+      {% block content %}
+        {% endblock %}
+   </main>
+
+   <script src=""></script>
+
+</body>
+</html>

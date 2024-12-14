@@ -1,0 +1,10 @@
+{% extends 'dashboard/layout.html' %}
+{%  block content%}
+
+<h2>Create/Update Analytics</h2>
+<form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Submit</button>
+</form>
+{% endblock %}

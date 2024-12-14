@@ -1,0 +1,15 @@
+
+{% load static %}
+<link rel="stylesheet" href="{% static 'payment/css/style.css' %}"> <div class="progress">
+    <h1>Your progress</h1>
+     {% for analytic in analytics %}
+    <img src="{{ analytic.image.url}} " alt="" class="progress-img">
+    <p class="progress-descr">{{ analytic.description }}</p>
+    <p class="progress-amt"> Amount : <span> {{ analytic.amount }} </span></p>
+    <p class="progress-create">created on : <span> {{ analytic.created_at }} </span></p>
+     {% empty %}
+    <li>No analytics available.</li>
+    {% endfor %}
+
+
+  </div>

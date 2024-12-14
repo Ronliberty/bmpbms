@@ -1,0 +1,13 @@
+{% extends 'dashboard/layout.html' %}
+{%  block content%}
+
+    <h1>Skills to have In freelance</h1>
+    <p class="skill-name">{{ skill.name }}</p>
+    <p class="skill-descr">
+          {{ skill.description }}</p>
+    <a href="{% url 'freelance:manager_skills_list' %}">Back to skills</a>
+
+        <a href="{% url 'freelance:skills_delete' skill.id %}">Delete skill</a>
+
+
+{% endblock %}

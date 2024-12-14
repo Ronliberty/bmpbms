@@ -1,0 +1,22 @@
+{% load static %}
+
+<link rel="stylesheet" href="{% static 'freelance/css/style.css' %}">
+
+  </div>
+  <div class="skills">
+
+     {% for skill in skill %}
+    <h1>Skills to have In freelance</h1>
+    <p class="skill-name">{{ skill.name }}</p>
+    <p class="skill-descr">
+      {{ skill.description }}
+       </p>
+      {% empty %}
+
+    <p>No skills available.</p>
+  {% endfor %}
+
+    </p>
+  </div>
+    </div>
+  </div>

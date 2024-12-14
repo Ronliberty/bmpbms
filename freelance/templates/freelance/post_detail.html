@@ -1,0 +1,12 @@
+{% extends 'dashboard/layout.html' %}
+{% block content %}
+<body>
+    <h1>{{ post.title }}</h1>
+    <p>{{ post.content }}</p>
+    <p>Created by: {{ post.created_by }}</p>
+    <a href="{% url 'freelance:manager_post_list' %}">Back to Posts</a>
+
+        <a href="{% url 'freelance:post_delete' post.id %}">Delete Post</a>
+
+</body>
+{% endblock %}

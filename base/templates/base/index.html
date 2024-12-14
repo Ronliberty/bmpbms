@@ -1,0 +1,39 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>InnoHub - We're available for marketing</title>
+
+ <link rel="stylesheet" href="{% static 'base/css/try.css' %}">
+
+</head>
+
+<nav class="navbar">
+  <h1 class="navname">Bms_Bmp</h1>
+  <div class="navlinks">
+    <li class="links"><a href="#" style="text-decoration: none; color: white; ">More </a></li>
+    <li class="links"><a href="{% url 'login' %}" style="text-decoration: none; color: white; ">Sign In </li></a>
+  </div>
+
+
+</nav>
+<section class="hero_sect">
+  <div class="hero">
+    <p>Welcome to <strong>BMS_BMP</strong>!
+      Stay ahead in the freelance world with the latest updates, AI tools, and innovations.
+      We bring you all the essential information to navigate and excel in the ever-evolving freelance industry.
+      <em>Your journey to freelance success starts here.</em>
+    </p>
+
+ <a href="{% url 'account:sign_up' %}" class="btn" style="text-decoration: none; ">Get Started</a>
+
+  </div>
+</section>
+
+
+</body>
+</html>

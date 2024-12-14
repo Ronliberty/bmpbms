@@ -1,0 +1,10 @@
+{% extends 'dashboard/layout.html' %}
+{%  block content%}
+    <h1>Create New Post</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Save</button>
+    </form>
+    <a href="{% url 'freelance:manager_post_list' %}">Cancel</a>
+{% endblock %}

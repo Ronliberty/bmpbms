@@ -1,0 +1,20 @@
+{% extends 'dashboard/base.html' %}
+{% block content %}
+<h1>Service Request History</h1>
+
+{% if servicerequests %}
+    <ul>
+        {% for request in servicerequests %}
+            <li>
+                <strong>Service:</strong> {{ request.service.title }}<br>
+                <strong>Status:</strong> {{ request.get_status_display }}<br>
+                <strong>Requested At:</strong> {{ request.requested_at|date:"F j, Y, g:i a" }}<br>
+                <strong>Details:</strong> {{ request.additional_details|default:"No details provided." }}
+            </li>
+        {% endfor %}
+    </ul>
+{% else %}
+    <p>No service requests found.</p>
+{% endif %}
+
+{% endblock %}

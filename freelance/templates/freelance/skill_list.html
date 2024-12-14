@@ -1,0 +1,18 @@
+{% extends 'dashboard/layout.html' %}
+{% block content %}
+<div class="skills">
+
+     {% for skill in skill %}
+    <h1>Skills to have In freelance</h1>
+    <p class="skill-name">{{ skill.name }}</p>
+    <p class="skill-descr">
+      {{ skill.description }}
+       </p>
+    <div><a href="{% url 'freelance:skill_detail' skill.id %}">click here</a></div>
+      {% empty %}
+
+    <p>No skills available.</p>
+  {% endfor %}
+
+
+{% endblock %}

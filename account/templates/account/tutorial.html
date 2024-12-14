@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tutorials</title>
+</head>
+<body>
+    <h1>Tutorial Videos</h1>
+
+    {% if tutorials %}
+        {% for tutorial in tutorials %}
+            <div>
+                <h2>{{ tutorial.title }}</h2>
+                <p>{{ tutorial.description }}</p>
+
+                <!-- Video element -->
+                <video controls width="640" height="360">
+                    <source src="{{ tutorial.video.url }}" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+            <hr>
+        {% endfor %}
+    {% else %}
+        <p>No tutorial videos available at the moment.</p>
+    {% endif %}
+
+    <!-- Skip link -->
+    <a href="{% url 'dashboard:client_dashboard' %}">Skip Tutorial</a>
+</body>
+</html>

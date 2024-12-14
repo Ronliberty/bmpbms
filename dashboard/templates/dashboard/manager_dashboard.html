@@ -1,0 +1,124 @@
+{% extends 'dashboard/layout.html' %}
+{%  block content%}
+        </div>
+<div class="main-header">
+          <nav class="main-links" >
+              <li class="link"><a href="{% url 'account:manager-tutorial' %}">Tutorial</a></li>
+              <li class="link"><a href="{% url 'payment:analytics-create' %}">Create-Analytics</a></li>
+              <li class="link"><a href="{% url 'payment:create_invoice' %}">Create-Invoice</a></li>
+              <li class="link"><a href="{% url 'freelance:news_create' %}">Create-News</a></li>
+              <li class="link"><a href="{% url 'services:service-create' %}">Create- Service</a></li>
+              <li class="link"><a href="{% url 'services:manager-request' %}">Requested-Service</a></li>
+              <li class="link"><a href="{% url 'freelance:skill_create' %}">Create-Skills</a></li>
+              <li class="link"><a href="{% url 'freelance:post_create' %}">Create-Posts</a></li>
+              <li class="link"><a href="{% url 'freelance:tool_create' %}">Create-Tools</a></li>
+              <li class="link"><a href="{% url 'account:manager-tutorial' %}">Tutorial</a></li>
+</nav>
+
+        </div>
+<div id="child-content">
+    <!-- Dynamic content will be loaded here -->
+    <p>Welcome! Select an option from the navigation above.</p>
+</div>
+
+<!--{% block extra_js %}-->
+<!--<script>-->
+<!--   document.addEventListener("DOMContentLoaded", function () {-->
+<!--    // Select all navigation links-->
+<!--    const navLinks = document.querySelectorAll(".main-links .link a");-->
+
+<!--    // Get the dynamic content container-->
+<!--    const contentContainer = document.getElementById("child-content");-->
+
+<!--    // Create a loading spinner element-->
+<!--    const loadingSpinner = document.createElement("div");-->
+<!--    loadingSpinner.classList.add("loading-spinner");-->
+<!--    loadingSpinner.innerHTML = "Loading..."; // Customize this as needed-->
+
+<!--    // Function to load content dynamically-->
+<!--    function loadContent(targetUrl) {-->
+<!--        if (targetUrl && targetUrl !== "#") {-->
+<!--            // Show loading spinner-->
+<!--            contentContainer.innerHTML = '';-->
+<!--            contentContainer.appendChild(loadingSpinner);-->
+
+<!--            fetch(targetUrl)-->
+<!--                .then(response => {-->
+<!--                    if (!response.ok) {-->
+<!--                        throw new Error(`HTTP error! status: ${response.status}`);-->
+<!--                    }-->
+<!--                    return response.text(); // Parse the response as text (HTML)-->
+<!--                })-->
+<!--                .then(html => {-->
+<!--                    contentContainer.innerHTML = html; // Inject the loaded content-->
+<!--                    attachDynamicListeners(); // Reattach listeners for nested components-->
+<!--                })-->
+<!--                .catch(error => {-->
+<!--                    console.error("Error loading content:", error);-->
+<!--                    contentContainer.innerHTML = "An error occurred while loading content."; // Show error message-->
+<!--                });-->
+<!--        }-->
+<!--    }-->
+
+<!--    // Attach click listeners to navigation links-->
+<!--    navLinks.forEach(link => {-->
+<!--        link.addEventListener("click", function (event) {-->
+<!--            event.preventDefault(); // Prevent default link behavior-->
+<!--            const targetUrl = this.getAttribute("href"); // Get the URL from the link-->
+<!--            loadContent(targetUrl); // Load the target content dynamically-->
+<!--        });-->
+<!--    });-->
+
+<!--    // Attach listeners to dynamically loaded content-->
+<!--    function attachDynamicListeners() {-->
+<!--        // Find any new links within the dynamically loaded content-->
+<!--        const dynamicLinks = contentContainer.querySelectorAll("a");-->
+
+<!--        dynamicLinks.forEach(link => {-->
+<!--            link.addEventListener("click", function (event) {-->
+<!--                event.preventDefault();-->
+<!--                const targetUrl = this.getAttribute("href");-->
+<!--                loadContent(targetUrl); // Handle nested navigation-->
+<!--            });-->
+<!--        });-->
+
+<!--        // Optional: Add form submission handling for dynamic content-->
+<!--        const forms = contentContainer.querySelectorAll("form");-->
+<!--        forms.forEach(form => {-->
+<!--            form.addEventListener("submit", function (event) {-->
+<!--                event.preventDefault(); // Prevent default form submission-->
+<!--                handleFormSubmit(form); // Custom form handling-->
+<!--            });-->
+<!--        });-->
+<!--    }-->
+
+<!--    // Handle form submissions dynamically (example for 'POST' form submission)-->
+<!--    function handleFormSubmit(form) {-->
+<!--        const formData = new FormData(form);-->
+<!--        fetch(form.action, {-->
+<!--            method: form.method,-->
+<!--            body: formData,-->
+<!--            headers: {-->
+<!--                'X-CSRFToken': document.querySelector('[name=csrfmiddlewaretoken]').value, // Add CSRF token-->
+<!--            },-->
+<!--        })-->
+<!--        .then(response => response.json())-->
+<!--        .then(data => {-->
+<!--            if (data.success) {-->
+<!--                // Handle success (e.g., show a success message or redirect)-->
+<!--                contentContainer.innerHTML = "<p>Form submitted successfully!</p>";-->
+<!--            } else {-->
+<!--                // Handle error (e.g., display an error message)-->
+<!--                contentContainer.innerHTML = "<p>An error occurred. Please try again.</p>";-->
+<!--            }-->
+<!--        })-->
+<!--        .catch(error => {-->
+<!--            console.error("Error submitting form:", error);-->
+<!--            contentContainer.innerHTML = "<p>Failed to submit the form. Please try again.</p>";-->
+<!--        });-->
+<!--    }-->
+<!--});-->
+
+<!--</script>-->
+<!--{% endblock %}-->
+{% endblock %}

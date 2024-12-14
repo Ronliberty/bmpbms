@@ -1,0 +1,23 @@
+{% extends 'dashboard/base.html' %}
+{% load static %}
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'partner/css/styles.css' %}">
+{% endblock %}
+{% block content %}
+ <div class="part">
+    <h1>Partnerships we offer</h1>
+      {% for partnershiparea in partnership %}
+
+
+    <p class="part-name"><span> Name : </span> {{ partnershiparea.name }}</p>
+    <p class="part-descr"><span> Description: </span> {{ partnershiparea.description }}</p>
+
+    <P class="part-p">To proceed click the button below!</P>
+    <a href="{% url 'partner:default_question_list' %}?partnership_area={{ partnershiparea.id }}" class="part-btn">Try it today!</a>
+
+     {% empty %}
+        <p class="no-partnerships">You have no Partnerships.</p>
+    {% endfor %}
+
+   </div>
+{% endblock %}

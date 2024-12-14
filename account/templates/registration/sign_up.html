@@ -1,0 +1,80 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Create an Account</title>
+  <link rel="stylesheet" href="{% static 'account/css/sign.css' %}">
+</head>
+<body>
+  <div class="container">
+    <h2>Create an Account</h2>
+    <form method="post" class="signup-form">
+      {% csrf_token %}
+
+      <!-- Username -->
+      <div class="form-group">
+        <label for="{{ form.username.id_for_label }}">Username</label>
+        {{ form.username }}
+        {% if form.username.errors %}
+        <div class="alert">
+          {% for error in form.username.errors %}
+          <p>{{ error }}</p>
+          {% endfor %}
+        </div>
+        {% endif %}
+      </div>
+
+      <!-- Email -->
+      <div class="form-group">
+        <label for="{{ form.email.id_for_label }}">Email</label>
+        {{ form.email }}
+        {% if form.email.errors %}
+        <div class="alert">
+          {% for error in form.email.errors %}
+          <p>{{ error }}</p>
+          {% endfor %}
+        </div>
+        {% endif %}
+      </div>
+
+      <!-- Password -->
+      <div class="form-group">
+        <label for="{{ form.password1.id_for_label }}">Password</label>
+        {{ form.password1 }}
+        {% if form.password1.errors %}
+        <div class="alert">
+          {% for error in form.password1.errors %}
+          <p>{{ error }}</p>
+          {% endfor %}
+        </div>
+        {% endif %}
+      </div>
+
+      <!-- Confirm Password -->
+      <div class="form-group">
+        <label for="{{ form.password2.id_for_label }}">Confirm Password</label>
+        {{ form.password2 }}
+        {% if form.password2.errors %}
+        <div class="alert">
+          {% for error in form.password2.errors %}
+          <p>{{ error }}</p>
+          {% endfor %}
+        </div>
+        {% endif %}
+      </div>
+
+      <!-- Submit Button -->
+      <div class="form-group text-center">
+        <button type="submit" class="btn">Register</button>
+      </div>
+
+      <!-- Login Redirect -->
+      <p class="login-redirect">
+        Already have an account? <a href="{% url 'login' %}">Login Here</a>!
+      </p>
+    </form>
+  </div>
+</body>
+</html>

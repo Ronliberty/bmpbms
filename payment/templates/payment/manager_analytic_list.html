@@ -1,0 +1,34 @@
+{% extends 'dashboard/layout.html' %}
+{%  block content%}
+<h2>Manager Analytics List</h2>
+
+<table border="1" style="width: 100%; border-collapse: collapse;">
+    <thead>
+        <tr>
+            <th>Description</th>
+            <th>Amount</th>
+            <th>Target User</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for analytic in analytics %}
+        <tr>
+            <td>{{ analytic.description }}</td>
+            <td>{{ analytic.amount }}</td>
+            <td>{{ analytic.target_user }}</td>
+            <td>
+                <a href="{% url 'payment:analytics-detail' analytic.id %}">View</a>
+                 <a href="{% url 'payment:edit_analytics' analytic.id %}">Edit</a> |
+            <!-- Delete Button -->
+            <a href="{% url 'payment:delete_analytics' analytic.id %}" onclick="return confirm('Are you sure you want to delete this invoice?');">Delete</a>
+            </td>
+        </tr>
+        {% empty %}
+        <tr>
+            <td colspan="5">No analytics available.</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

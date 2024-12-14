@@ -1,0 +1,104 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'dashboard/css/try.css' %}" />
+
+
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+      {% block extra_css %}{% endblock %}
+</head>
+<body>
+   <header class="header">
+    <div class="left-section">
+        <div class="hamburger-menu">
+            <i class='bx bx-menu'></i>
+        </div>
+        <a href="{% url 'dashboard:manager_dashboard' %}" style="text-decoration: none;">
+        <h1 class="logo-name">Bms_Bmp</h1>
+        </a>
+    </div>
+    <div class="middle-section">
+    <!-- Search Form -->
+    <form action="" method="post">
+
+        <input class="search-bar" type="search" placeholder="Search" name="Searched" >
+        <button type="submit" class="search-icon">
+            <i class='bx bx-search'></i>
+        </button>
+    </form>
+
+    <!-- Search Results -->
+
+</div>
+
+
+        <div class="right-section">
+            <div class="icon-settings">
+                <div class="settings">
+                    <a href="{% url 'account:manager-help' %}" class="home-link" style="text-decoration: none; color: black;"><i class='bx bx-cog'></i></a>
+                </div>
+                <div class="user">
+                    <a href="{% url 'agent:user_list' %}" class="home-link" style="text-decoration: none; color: black;"><i class='bx bx-user' ></i></a>
+                </div>
+                <div class="chart">
+                    <a href="" class="home-link" style="text-decoration: none; color: black;"><i class='bx bxs-comment-dots'></i></a>
+                </div>
+            </div>
+            </div>
+                <div class="profile-picture">
+                    <img class="current-user-picture" src= "/Powerhouse_gym/assets/gym1.jpg" alt="" class="profile-pic">
+                </div>
+
+        </div>
+    </div>
+    <nav class="sidebar">
+        <div class="sidebar-link">
+            <a href="{% url 'dashboard:manager_dashboard' %}" class="home-link" style="text-decoration: none; color: black;"><i class='bx bx-home' ></i></a>
+            <div> <a href="{% url 'dashboard:manager_dashboard' %}" class="home-link" style="text-decoration: none; color: black;">Home</a></div>
+        </div>
+        <div class="sidebar-link">
+            <a href="{% url 'freelance:manager_post_list' %}" class="home-link" style="text-decoration: none; color: black;"><i class='bx bxs-user' ></i></a>
+            <div> <a href="{% url 'freelance:manager_post_list' %}" class="home-link" style="text-decoration: none; color: black;">Posts</a></div>
+        </div>
+        <div class="sidebar-link">
+            <a href="{% url 'freelance:manager_news_list' %}" class="home-link" style="text-decoration: none; color: black;"><i class='bx bx-male-female'></i></a>
+            <div> <a href="{% url 'freelance:manager_news_list' %}" class="home-link" style="text-decoration: none; color: black;">News</a></div>
+        </div>
+        <div class="sidebar-link">
+            <a href="{% url 'freelance:manager_tools_list' %}" class="home-link" style="text-decoration: none; color: black;"><i class='bx bx-history'></i></a>
+            <div> <a href="{% url 'freelance:manager_tools_list' %}" class="home-link" style="text-decoration: none; color: black;"></a>Tools</a></div>
+        </div>
+        <div class="sidebar-link">
+            <a href="{% url 'freelance:manager_skills_list' %}" class="home-link" style="text-decoration: none; color: black;"><i class='bx bx-help-circle'></i></a>
+            <div> <a href="{% url 'freelance:manager_skills_list' %}" class="home-link" style="text-decoration: none; color: black;">Skills</a></div>
+        </div>
+         <div class="sidebar-link">
+            <a href="{% url 'payment:manager_analytics_list' %}" class="home-link" style="text-decoration: none; color: black;"><i class='bx bx-help-circle'></i></a>
+            <div> <a href="{% url 'payment:manager_analytics_list' %}" class="home-link" style="text-decoration: none; color: black;">Analytics</a></div>
+        </div>
+         <div class="sidebar-link">
+            <a href="{% url 'payment:manager_invoice_list' %}" class="home-link" style="text-decoration: none; color: black;"><i class='bx bx-help-circle'></i></a>
+            <div> <a href="{% url 'payment:manager_invoice_list' %}" class="home-link" style="text-decoration: none; color: black;">Invoice</a></div>
+        </div>
+
+    </nav>
+
+
+
+
+   </header>
+   <main>
+       <section>
+           {% block content %}
+           {% endblock %}
+       </section>
+   </main>
+
+   <script src="{% static 'dashboard/dashboard.js' %}"></script>
+
+</body>
+</html>

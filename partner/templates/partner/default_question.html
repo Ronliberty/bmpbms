@@ -1,0 +1,30 @@
+{% extends 'dashboard/base.html' %}
+{% block content %}
+<h1>Questions for {{ partnershiparea.name }}</h1>
+
+{% if object_list %}
+    <table>
+        <thead>
+            <tr>
+                <th>Partnership Area</th>
+                <th>Question</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for question in object_list %}
+                <tr>
+                    <td>{{ question.partnership_area.name }}</td>
+                    <td>{{ question.question_text }}</td>
+                    <td>
+                        <a href="#">Skip</a> |
+                        <a href="#">Answer</a>
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% else %}
+    <p>No questions available for this partnership area.</p>
+{% endif %}
+{% endblock %}

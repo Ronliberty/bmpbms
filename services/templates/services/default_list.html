@@ -1,0 +1,18 @@
+
+    <h1>Default Service List</h1>
+    <ul>
+        {% for service in services %}
+            <li>
+                <h2>{{ service.title }}</h2>
+                <p>{{ service.description }}</p>
+
+                <!-- Display related images -->
+                {% for image in service.images.all %}
+                    <img src="{{ image.image.url }}" alt="Image for {{ service.title }}" style="max-width: 200px; height: auto;">
+                {% empty %}
+                    <p>No images available for this service.</p>
+                {% endfor %}
+            </li>
+        {% endfor %}
+    </ul>
+

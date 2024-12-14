@@ -1,0 +1,13 @@
+<h1>Search Results for "{{ searched }}"</h1>
+
+{% if news_results %}
+    <ul>
+        {% for news in news_results %}
+            <li>
+                <a href="{% url 'freelance:news_detail' news.id %}">{{ news.name }}</a>
+            </li>
+        {% endfor %}
+    </ul>
+{% else %}
+    <p>No news articles found for "{{ searched }}".</p>
+{% endif %}
